@@ -11,9 +11,9 @@ cd /opt/cloudera/parcels/CDH/lib/spark/bin/
 
 spark-shell
 
-val myfile = sc.textFile("hdfs://ip-10-0-1-112.ec2.internal:8020/input/")
+val myfile = sc.textFile("hdfs://ip-172-31-65-6.ec2.internal:8020/input/poem")
 val counts = myfile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
-counts.saveAsTextFile("hdfs://ip-10-0-1-112.ec2.internal:8020/out1/")
+counts.saveAsTextFile("hdfs://ip-172-31-65-6.ec2.internal:8020/out1/")
 
 pyspark
 
